@@ -105,11 +105,11 @@ public class CRUDClase extends Conectar {
 		}
 	}
 
-	public void consulta(String where) {
+	public void consulta(String filtro) {
 		ResultSet res = null;
 		try { // Ejecutarla
 			res = getCon().createStatement().executeQuery("SELECT idclase,curso,planta,edificio"
-					+ 									" FROM clase " + where);
+					+ 									" FROM clase " + filtro);
 					//"WHERE planta like '"+planta+"' AND edificio = '"+edificio+"'");
 			mostrarSelect(res);
 		} catch (SQLException res1) {

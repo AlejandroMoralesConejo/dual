@@ -105,11 +105,11 @@ public class CRUDAlumno extends Conectar {
 		}
 	}
 	
-	public void consulta(String where) {
+	public void consulta(String filtro) {
 		ResultSet res = null;
 		try { // Ejecutarla
 			res = getCon().createStatement().executeQuery("SELECT idalumno,idclase,nombre,apellidos"
-					+ " FROM alumno " + where);
+					+ " FROM alumno " + filtro);
 			mostrarSelect(res);
 		} catch (SQLException res1) {
 			System.out.println(res1.getMessage());
